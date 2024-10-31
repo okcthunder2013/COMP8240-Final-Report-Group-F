@@ -1,0 +1,27 @@
+Overview
+
+This project demonstrates text pre-processing and preparation for an IMDB movie review dataset. It includes scripts and data files essential for processing and analysing movie reviews.
+
+
+Project Files
+
+"solution.ipynb": A Jupyter Notebook that contains code and explanations for processing the IMDB movie dataset and performing analysis tasks.
+
+"Preprocess.py": A Python script that pre-processes the IMDB dataset by applying various text transformations, preparing it for classification and further analysis.
+
+"IMDB Dataset.csv": A CSV file containing movie reviews from the IMDB dataset. This raw data is used for text classification and pre-processing tasks.
+
+"train.txt": A text file with pre-processed training data, derived from IMDB Dataset.csv.
+"test.txt": A text file with pre-processed test data, also derived from the IMDB dataset.
+
+Workflow
+
+Run "Preprocess.py": Execute this script to process IMDB Dataset.csv, transforming raw text data into a structured format.
+
+Training and Testing Files: The processed data is saved as train.txt and test.txt, which can then be used for model training and evaluation.
+
+Usage
+
+Load "solution.ipynb" in GitHub Codespaces to view the code examples and run analyses on the IMDB dataset.
+
+Use "Preprocess.py" to prepare the dataset, generating train.txt and test.txt for training and testing purposes.
