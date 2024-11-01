@@ -12,14 +12,56 @@ tail -n +$((train_lines + 1)) data.txt > test.txt
 awk '{label=$1; $1=""; sub(/^[ \t]+/, "", $0); text=tolower($0); gsub(/[[:punct:]]+/, "", text); print label " " text}' train.txt > preprocessed_train.txt
 awk '{label=$1; $1=""; sub(/^[ \t]+/, "", $0); text=tolower($0); gsub(/[[:punct:]]+/, "", text); print label " " text}' test.txt > preprocessed_test.txt
 ./fasttext supervised -input preprocessed_train.txt -output model_news
+Read 1M words
+Number of words:  105645
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  203599 lr:  0.000000 avg.loss:  1.380885 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.46
+R@1     0.46
 ./fasttext supervised -input preprocessed_train.txt -output model_news -epoch 10
+Read 1M words
+Number of words:  60183
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  216909 lr:  0.000000 avg.loss:  1.162408 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.557
+R@1     0.557
 ./fasttext supervised -input preprocessed_train.txt -output model_news -epoch 10 -lr 0.5
+Read 1M words
+Number of words:  60183
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  220232 lr:  0.000000 avg.loss:  1.014158 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.516
+R@1     0.516
 ./fasttext supervised -input preprocessed_train.txt -output model_news -epoch 10 -lr 1.0
+Read 1M words
+Number of words:  60183
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  217262 lr:  0.000000 avg.loss:  2.029095 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.532
+R@1     0.532
 ./fasttext supervised -input preprocessed_train.txt -output model_news -epoch 10 -lr 1.0 -wordNgrams 2
+Read 1M words
+Number of words:  60183
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  176563 lr:  0.000000 avg.loss:  0.374077 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.535
+R@1     0.535
 ./fasttext supervised -input preprocessed_train.txt -output model_news -epoch 10 -lr 1.0 -wordNgrams 2 -loss one-vs-all
+Read 1M words
+Number of words:  60183
+Number of labels: 42
+Progress: 100.0% words/sec/thread:  166258 lr:  0.000000 avg.loss:  0.752180 ETA:   0h 0m 0s
 ./fasttext test model_news.bin preprocessed_test.txt
+N       41906
+P@1     0.521
+R@1     0.521
