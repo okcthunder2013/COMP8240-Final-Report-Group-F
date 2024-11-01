@@ -1,0 +1,101 @@
+===== Tweet Experiment Started at Fri Nov  1 10:09:23 UTC 2024 =====
+Inspecting labeled tweets content
+__label__positive __label__entertainment CONGRATULATIONS Suzie Walker on both your beautiful little man and your FANTASTIC commitment and hard work. You... https://t.co/m4QLVq0BTr
+__label__positive __label__entertainment Wantirna, VIC, AU 11:00 AM Temp 19.8°C, RH 67pct, Winds NNW @ 0.0 km/h, Rain Today  0 mm, 1014.3 hpa &amp; Steady. #vicweather
+__label__positive __label__technology Join us @ the Hilton Sydney 2 learn how 2 make analytics pervasive across yr organisation https://t.co/xGO7cZy9yU https://t.co/otxAeyMHMV
+__label__negative __label__entertainment Say Hello to this Gorgeous Gingham Dress! \n\nPerfect for a day of Play or a Party. \n\nOriginally $50 Now Only $40!... https://t.co/ILI5uaCIHw
+__label__positive __label__technology Register for #Convergence2016 to hear@ChelleMelbourne talk about how to manage change through digital transformation https://t.co/7pxwwDeaXm
+__label__negative __label__entertainment Friday's from 3pm\nFree BBQ, Bikini Girls &amp; Beverages\nMeat Raffles around Lunch Time\nSeafood Raffle from 4pm... https://t.co/etPRxJ2l7x
+__label__negative __label__sports Dormant  by James Bryron Love https://t.co/JK8W5qtWX7  #ASMSG #IAN1 https://t.co/xcyzmdTyIv
+__label__positive __label__entertainment THE FOLLOWING TAKES PLACE BETWEEN 11:00AM AND 12:00PM.
+__label__positive __label__entertainment So much to see and do when you Visit Central Australia\n\
+__label__positive __label__entertainment \
+Counting words, lines, and bytes in labeled_tweets_preprocessed.txt
+  10000  154257 1391440 labeled_tweets_preprocessed.txt
+Splitting labeled tweets into training and validation sets
+===== Raw Model Training and Evaluation =====
+Training raw model
+Read 0M words
+Number of words:  40317
+Number of labels: 7
+Progress:  70.7% words/sec/thread:  434432 lr:  0.029314 avg.loss:  1.701483 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  307705 lr: -0.000011 avg.loss:  1.659246 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  307154 lr:  0.000000 avg.loss:  1.659246 ETA:   0h 0m 0s
+Evaluating raw model
+Raw Model Results:
+N	1000
+P@1	0.801
+R@1	0.401
+
+===== Preprocessed Model Training and Evaluation =====
+Preprocessing tweets
+Training preprocessed model
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  44.0% words/sec/thread:  380383 lr:  0.056047 avg.loss:  1.595606 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  433422 lr: -0.000036 avg.loss:  1.579802 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  432517 lr:  0.000000 avg.loss:  1.579802 ETA:   0h 0m 0s
+Evaluating preprocessed model
+Preprocessed Model Results:
+N	1000
+P@1	0.818
+R@1	0.409
+
+===== Model with Increased Epochs =====
+Training model with increased epochs (25)
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  18.6% words/sec/thread:  805911 lr:  0.081378 avg.loss:  1.579184 ETA:   0h 0m 0sProgress:  33.7% words/sec/thread:  730002 lr:  0.066309 avg.loss:  1.507657 ETA:   0h 0m 0sProgress:  50.9% words/sec/thread:  735817 lr:  0.049089 avg.loss:  1.454788 ETA:   0h 0m 0sProgress:  69.7% words/sec/thread:  756140 lr:  0.030262 avg.loss:  1.394783 ETA:   0h 0m 0sProgress:  88.5% words/sec/thread:  767523 lr:  0.011530 avg.loss:  1.338707 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  723106 lr: -0.000013 avg.loss:  1.308634 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  722839 lr:  0.000000 avg.loss:  1.308634 ETA:   0h 0m 0s
+Evaluating model with increased epochs
+Epoch Model Results:
+N	1000
+P@1	0.837
+R@1	0.418
+
+===== Model with Increased Learning Rate =====
+Training model with learning rate (1.0)
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  91.2% words/sec/thread:  766673 lr:  0.088403 avg.loss:  1.508372 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  426836 lr: -0.000232 avg.loss:  1.507828 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  426108 lr:  0.000000 avg.loss:  1.507828 ETA:   0h 0m 0s
+Evaluating model with increased learning rate
+Learning Rate Model Results:
+N	1000
+P@1	0.836
+R@1	0.418
+
+===== Combined Model with Increased Learning Rate and Epochs =====
+Training model with learning rate (1.0) and epochs (25)
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  18.0% words/sec/thread:  776837 lr:  0.820439 avg.loss:  1.590782 ETA:   0h 0m 0sProgress:  36.6% words/sec/thread:  792095 lr:  0.634100 avg.loss:  1.477542 ETA:   0h 0m 0sProgress:  55.6% words/sec/thread:  803151 lr:  0.443652 avg.loss:  1.393237 ETA:   0h 0m 0sProgress:  73.7% words/sec/thread:  798668 lr:  0.262784 avg.loss:  1.331122 ETA:   0h 0m 0sProgress:  93.2% words/sec/thread:  808024 lr:  0.067653 avg.loss:  1.260796 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  722374 lr: -0.000041 avg.loss:  1.243279 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  721966 lr:  0.000000 avg.loss:  1.243279 ETA:   0h 0m 0s
+Evaluating combined model
+Combined Model Results:
+N	1000
+P@1	0.842
+R@1	0.421
+
+===== Model with Bigrams and Enhanced Parameters =====
+Training model with bigrams and enhanced parameters
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  10.2% words/sec/thread:  441141 lr:  0.898061 avg.loss:  1.539238 ETA:   0h 0m 0sProgress:  19.9% words/sec/thread:  432030 lr:  0.800588 avg.loss:  1.453999 ETA:   0h 0m 0sProgress:  30.1% words/sec/thread:  435040 lr:  0.698970 avg.loss:  1.380405 ETA:   0h 0m 0sProgress:  40.0% words/sec/thread:  433908 lr:  0.599808 avg.loss:  1.330267 ETA:   0h 0m 0sProgress:  49.9% words/sec/thread:  432881 lr:  0.501000 avg.loss:  1.287964 ETA:   0h 0m 0sProgress:  58.8% words/sec/thread:  425469 lr:  0.411548 avg.loss:  1.249522 ETA:   0h 0m 0sProgress:  68.4% words/sec/thread:  424216 lr:  0.315516 avg.loss:  1.205460 ETA:   0h 0m 0sProgress:  78.9% words/sec/thread:  427821 lr:  0.211152 avg.loss:  1.176184 ETA:   0h 0m 0sProgress:  89.6% words/sec/thread:  431851 lr:  0.104229 avg.loss:  1.140195 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  433915 lr: -0.000049 avg.loss:  1.113316 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  433852 lr:  0.000000 avg.loss:  1.113316 ETA:   0h 0m 0s
+Evaluating bigram model
+Bigram Model Results:
+N	1000
+P@1	0.855
+R@1	0.427
+
+===== Final Model with Multilabel Classification =====
+Training final model with multilabel classification
+Read 0M words
+Number of words:  32222
+Number of labels: 7
+Progress:  15.8% words/sec/thread:  681350 lr:  0.421216 avg.loss:  1.875121 ETA:   0h 0m 0sProgress:  26.6% words/sec/thread:  576594 lr:  0.366834 avg.loss:  1.450268 ETA:   0h 0m 0sProgress:  39.9% words/sec/thread:  575870 lr:  0.300670 avg.loss:  0.869046 ETA:   0h 0m 0sProgress:  55.3% words/sec/thread:  599852 lr:  0.223253 avg.loss:  0.683575 ETA:   0h 0m 0sProgress:  69.4% words/sec/thread:  597544 lr:  0.153009 avg.loss:  0.607246 ETA:   0h 0m 0sProgress:  81.8% words/sec/thread:  587682 lr:  0.091046 avg.loss:  0.547271 ETA:   0h 0m 0sProgress:  97.3% words/sec/thread:  599942 lr:  0.013388 avg.loss:  0.470848 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  539815 lr: -0.000037 avg.loss:  0.470795 ETA:   0h 0m 0sProgress: 100.0% words/sec/thread:  539710 lr:  0.000000 avg.loss:  0.470795 ETA:   0h 0m 0s
+Evaluating final enhanced model with multilabel classification
+Final Enhanced Model Results with Multilabel Classification:
+N	1000
+P@-1	0.797
+R@-1	0.721
+
+===== Tweet Experiment Ended at Fri Nov  1 10:09:51 UTC 2024 =====
